@@ -7,7 +7,7 @@ import { NavLinks } from '@/components/NavLinks'
 import qrCode from '@/images/qr-code.svg'
 import at from '@/images/Link.svg'
 import phone from '@/images/Call.svg'
-import point from '@/images/Location.svg'
+import point from '@/images/location.svg'
 
 
 function QrCodeBorder(props) {
