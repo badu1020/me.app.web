@@ -10,8 +10,7 @@ export function NavLinks() {
   return [
     ['Онцлог шинжүүд ', '#features'],
     ['Бидний тухай', '#aboutus'],
-    ['Нэгдсэн системүүд', '#integrated'],
-    ['Түгээмэл асуултууд', 'FAQs']
+    ['Нэгдсэн системүүд', '#integrated']
   ].map(([label, href], index) => (
     <a
       key={label}

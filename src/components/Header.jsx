@@ -3,11 +3,12 @@
 import Link from 'next/link'
 import { Popover } from '@headlessui/react'
 import { AnimatePresence, motion } from 'framer-motion'
-
+import { usePathname } from 'next/navigation'
 import { Button } from '@/components/Button'
 import { Container } from '@/components/Container'
 import { Logo } from '@/components/Logo'
 import { NavLinks } from '@/components/NavLinks'
+import React, { useState, useEffect } from 'react'
 
 function MenuIcon(props) {
   return (
@@ -46,6 +47,18 @@ function MobileNavLink(props) {
 }
 
 export function Header() {
+
+  const pathname = usePathname();
+  const [isOpen, setOpen] = useState(false);
+
+  useEffect(() => {
+    console.log(pathname)
+    if (pathname === '/') {
+      return setOpen(!isOpen);
+    }
+  }, []);
+  console.log(isOpen)
+
   return (
     <header>
       <nav>
@@ -55,7 +68,10 @@ export function Header() {
               <Logo className="h-10 w-auto" />
             </Link>
             <div className="hidden lg:flex lg:gap-10">
-              <NavLinks />
+              {isOpen && (
+                <>
+                  <NavLinks />
+                </>)}
             </div>
           </div>
           <div className="flex items-center gap-6">
@@ -99,7 +115,7 @@ export function Header() {
                         >
                           <div className="space-y-4 text-white">
                             <MobileNavLink href="/#features" >
-                              Онцлог шинжүүд 
+                              Онцлог шинжүүд
                             </MobileNavLink>
                             <MobileNavLink href="/#aboutus">
                               Бидний тухай
@@ -116,9 +132,9 @@ export function Header() {
                 </>
               )}
             </Popover>
-            {/* <Button href="/policy" className=" lg:block bg-black text-white hover:bg-[#d62976]">
-              Privacy Policy 
-            </Button> */}
+            <Button href="/FAQs" className=" lg:block bg-black text-white hover:bg-[#d62976]">
+              Түгээмэл асуултууд
+            </Button>
             <Button href="/policy" className="bg-black text-white hover:bg-[#d62976]">
               Privacy Policy
             </Button>
