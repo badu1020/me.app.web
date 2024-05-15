@@ -2,6 +2,7 @@
 
 import { useRef, useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
+import Link from 'next/link'
 
 export function NavLinks() {
   let [hoveredIndex, setHoveredIndex] = useState(null)
@@ -12,7 +13,7 @@ export function NavLinks() {
     ['Бидний тухай', '/#aboutus'],
     ['Нэгдсэн системүүд', '/#integrated']
   ].map(([label, href], index) => (
-    <a
+    <Link
       key={label}
       href={href}
       className="relative -mx-3 -my-2 rounded-lg px-3 py-2 text-sm text-white transition-colors delay-150 hover:text-gray-900 hover:delay-0"
@@ -43,6 +44,6 @@ export function NavLinks() {
         )}
       </AnimatePresence>
       <span className="relative z-10">{label}</span>
-    </a>
+    </Link>
   ))
 }
