@@ -38,7 +38,7 @@ function ChevronUpIcon(props) {
 function MobileNavLink(props) {
   return (
     <Popover.Button
-      as={a}
+      as={Link}
       className="block p-2 rounded-xl text-base leading-7 tracking-tight text-white hover:bg-[#d62976]"
       {...props}
     />
