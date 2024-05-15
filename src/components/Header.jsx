@@ -3,12 +3,11 @@
 import Link from 'next/link'
 import { Popover } from '@headlessui/react'
 import { AnimatePresence, motion } from 'framer-motion'
-import { usePathname } from 'next/navigation'
 import { Button } from '@/components/Button'
 import { Container } from '@/components/Container'
 import { Logo } from '@/components/Logo'
 import { NavLinks } from '@/components/NavLinks'
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 
 function MenuIcon(props) {
   return (
@@ -48,16 +47,6 @@ function MobileNavLink(props) {
 
 export function Header() {
 
-  const pathname = usePathname();
-  const [isOpen, setOpen] = useState(false);
-
-  useEffect(() => {
-    console.log(pathname)
-    if (pathname === '/') {
-      return setOpen(!isOpen);
-    }
-  }, []);
-  console.log(isOpen)
 
   return (
     <header>
@@ -68,10 +57,7 @@ export function Header() {
               <Logo className="h-10 w-auto" />
             </Link>
             <div className="hidden lg:flex lg:gap-10">
-              {isOpen && (
-                <>
                   <NavLinks />
-                </>)}
             </div>
           </div>
           <div className="flex items-center gap-6">
@@ -123,7 +109,6 @@ export function Header() {
                             <MobileNavLink href="/#integrated">
                               Нэгдсэн системүүд
                             </MobileNavLink>
-                            <MobileNavLink href="/FAQs">Түгээмэл асуултууд</MobileNavLink>
                           </div>
                         </Popover.Panel>
                       </>
