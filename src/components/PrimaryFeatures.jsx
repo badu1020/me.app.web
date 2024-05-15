@@ -6,9 +6,9 @@ import clsx from 'clsx'
 import { AnimatePresence, motion } from 'framer-motion'
 import Image from 'next/image'
 import { useDebouncedCallback } from 'use-debounce'
-import card from '@/images/Cards.svg'
-import loan from '@/images/Loans.svg'
-import saving from '@/images/transactions.svg'
+import getlaon from '@/images/getLoan.jpg'
+import everopen from '@/images/everopen.jpg'
+import fromone from '@/images/oneplace.jpg'
 import { AppScreen } from '@/components/AppScreen'
 import { CircleBackground } from '@/components/CircleBackground'
 import { Container } from '@/components/Container'
@@ -166,7 +166,7 @@ function InviteScreen(props) {
       <MotionAppScreenBody
         {...(props.animated ? { ...bodyAnimation, custom: props.custom } : {})}
       >
-        <Image src={card} alt='Cards' />
+        <Image src={getlaon} alt='Cards' />
       </MotionAppScreenBody>
     </AppScreen>
   )
@@ -178,7 +178,7 @@ function StocksScreen(props) {
       <MotionAppScreenBody
         {...(props.animated ? { ...bodyAnimation, custom: props.custom } : {})}
       >
-        <Image src={loan} alt='Loan' />
+        <Image src={everopen} alt='Loan' />
       </MotionAppScreenBody>
     </AppScreen>
   )
@@ -190,7 +190,7 @@ function InvestScreen(props) {
       <MotionAppScreenBody
         {...(props.animated ? { ...bodyAnimation, custom: props.custom } : {})}
       >
-        <Image src={saving} alt='Savings' />
+        <Image src={fromone} alt='Savings' />
       </MotionAppScreenBody>
     </AppScreen>
   )

@@ -173,9 +173,11 @@ const Blog = () => {
                         onClick={() => {
                           setShow(!show);
                         }} className='rounded-full lg:h-5 lg:w-5 sm:h-8 sm:w-8 bg-gray-700 hover:bg-gray-500 transition ease-in-out text-black absolute top-2 right-2'><Image className=" lg:h-5 sm:h-8 absolute top-0 lg:right-0 sm:right-1" src={x} alt="close" /></div>
-                      <h1 className=" text-2xl font-medium card-title text-white text-center p-5"> {info.name}</h1>
-                      <p className="card-text text-white text-center p-2">{info.dec}</p>
-                      <Image src={info.img} height={300} className="flex content-center justify-center  px-2 pb-5" alt="Exmple images" />
+                      <div className="m-8 content-center  place-content-center  justify-center ">
+                        <h1 className=" text-2xl font-medium card-title text-white text-center p-5"> {info.name}</h1>
+                        <p className="card-text text-white text-center p-2">{info.dec}</p>
+                        <Image src={info.img} height={300} className="flex justify-self-center px-5 pb-5" alt="Exmple images" />
+                      </div>
                     </div>
                   </motion.div>
                 </>
